@@ -12,19 +12,14 @@ Goal of this project is to use stream deck to create time entries and tracking w
 
 ___
 
-# Hassle-free time tracking using [Elgato Stream Deck](https://www.elgato.com/en/gaming/stream-deck) and [Toggl Track](https://toggl.com/track/)
+# Hassle-free time tracking using [Elgato Stream Deck](https://www.elgato.com/en/gaming/stream-deck) and [Timular Tracking](https://toggl.com/track/)
 
 ## ✏️ Setup
 
 
 ## 📞 Help
 
-F
-
 ## 📄 License
 
-
-
 ## Known Issues
-
-*
+Ref:https://shields.io/category/monitoring
