@@ -1,6 +1,9 @@
+#Items needed for import to allow for project to work
 import http.client
 import json
-
+####
+#Start Authentication
+####
 conn = http.client.HTTPSConnection("api.timeular.com")
 payload = json.dumps({
   "apiKey": "{{API_KEY}}",
