@@ -1,9 +1,11 @@
 # EARLY Deck (formerly Timeular-Deck)
 
 <p align="center">
-  <a href="#">
-    <img src="resources/readme/GitHubBanner.png" alt="EARLY Deck" />
-  </a>
+  <img src="resources/readme/banner.svg" alt="EARLY Deck — time tracking for Stream Deck and OpenDeck" width="100%" />
+</p>
+
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-0d9488.svg" alt="MIT License"></a>
 </p>
 
 ___
@@ -47,6 +49,8 @@ For active development, `npm run watch` rebuilds on save and restarts the plugin
 ## 📞 Help
 
 ## 📄 License
+
+[MIT](LICENSE) — do what you like with it, including forking it for the official Stream Deck SDK or OpenDeck's OpenAction API.
 
 ## Known Issues
 - The official Elgato Stream Deck app doesn't ship for Linux at all, so on Linux OpenDeck is the
