@@ -1,0 +1,94 @@
+{
+	"Name": "EARLY Deck",
+	"Version": "0.1.0.0",
+	"Author": "Chris",
+	"PropertyInspectorPath": "ui/credentials.html",
+	"Actions": [
+		{
+			"Name": "Start Activity",
+			"UUID": "com.zavalalabs.early-deck.start-activity",
+			"Icon": "imgs/actions/common/icon",
+			"Tooltip": "Starts tracking a specific EARLY (Timeular) activity.",
+			"PropertyInspectorPath": "ui/activity-picker.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/common/key",
+					"TitleAlignment": "middle"
+				}
+			]
+		},
+		{
+			"Name": "Stop Tracking",
+			"UUID": "com.zavalalabs.early-deck.stop-tracking",
+			"Icon": "imgs/actions/common/icon",
+			"Tooltip": "Stops whatever EARLY activity is currently being tracked.",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/common/key",
+					"TitleAlignment": "middle"
+				}
+			]
+		},
+		{
+			"Name": "Toggle Activity",
+			"UUID": "com.zavalalabs.early-deck.toggle-activity",
+			"Icon": "imgs/actions/common/icon",
+			"Tooltip": "Starts or stops tracking a specific EARLY activity, and shows whether it's running.",
+			"PropertyInspectorPath": "ui/activity-picker.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/common/key",
+					"TitleAlignment": "middle"
+				}
+			]
+		},
+		{
+			"Name": "Current Activity",
+			"UUID": "com.zavalalabs.early-deck.current-activity",
+			"Icon": "imgs/actions/common/icon",
+			"Tooltip": "Displays whichever EARLY activity is currently being tracked.",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/common/key",
+					"TitleAlignment": "middle"
+				}
+			]
+		}
+	],
+	"Category": "EARLY Deck",
+	"CategoryIcon": "imgs/plugin/category-icon",
+	"CodePath": "bin/plugin.js",
+	"Description": "Track time in EARLY (Timeular) from your Stream Deck or OpenDeck.",
+	"Icon": "imgs/plugin/marketplace",
+	"SDKVersion": 3,
+	"Software": {
+		"MinimumVersion": "7.1"
+	},
+	"OS": [
+		{
+			"Platform": "mac",
+			"MinimumVersion": "12"
+		},
+		{
+			"Platform": "windows",
+			"MinimumVersion": "10"
+		}
+	],
+	"Nodejs": {
+		"Version": "24",
+		"Debug": "enabled"
+	},
+	"UUID": "com.zavalalabs.early-deck"
+}

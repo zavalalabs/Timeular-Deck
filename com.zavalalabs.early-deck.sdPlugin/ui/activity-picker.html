@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+	<head lang="en">
+		<title>EARLY Activity Settings</title>
+		<meta charset="utf-8" />
+		<script src="https://sdpi-components.dev/releases/v4/sdpi-components.js"></script>
+	</head>
+
+	<body>
+		<sdpi-item label="API Key">
+			<sdpi-textfield setting="apiKey" global></sdpi-textfield>
+		</sdpi-item>
+		<sdpi-item label="API Secret">
+			<sdpi-textfield setting="apiSecret" type="password" global></sdpi-textfield>
+		</sdpi-item>
+		<sdpi-item label="Activity">
+			<sdpi-select id="activity-select" setting="activityId" placeholder="Choose an activity…"></sdpi-select>
+		</sdpi-item>
+
+		<script>
+			// sdpi-components' `datasource` helper relies on the plugin replying to a one-shot
+			// request fired the instant this iframe loads — but under OpenDeck, iframes for every
+			// key load eagerly at startup, before any property inspector is "visible", and the
+			// SDK can only deliver sendToPropertyInspector replies to a visible one. The reply gets
+			// silently dropped and sdpi-components has no way to retry, so the dropdown hangs on
+			// "Loading..." forever. Fetching the activity list straight from the EARLY API here
+			// sidesteps that broken round-trip entirely — this page already has the API Key/Secret
+			// via the `global`-bound fields above.
+			const apiKeyField = document.querySelector('sdpi-textfield[setting="apiKey"]');
+			const apiSecretField = document.querySelector('sdpi-textfield[setting="apiSecret"]');
+			const select = document.getElementById("activity-select");
+
+			async function loadActivities() {
+				const apiKey = apiKeyField.value;
+				const apiSecret = apiSecretField.value;
+				if (!apiKey || !apiSecret) {
+					return;
+				}
+
+				select.innerHTML = "<option disabled selected>Loading activities…</option>";
+
+				try {
+					const signInRes = await fetch("https://api.early.app/api/v4/developer/sign-in", {
+						method: "POST",
+						headers: { "Content-Type": "application/json" },
+						body: JSON.stringify({ apiKey, apiSecret }),
+					});
+					if (!signInRes.ok) {
+						throw new Error(`sign-in failed (HTTP ${signInRes.status})`);
+					}
+					const { token } = await signInRes.json();
+
+					const activitiesRes = await fetch("https://api.early.app/api/v4/activities", {
+						headers: { Authorization: `Bearer ${token}` },
+					});
+					if (!activitiesRes.ok) {
+						throw new Error(`activities fetch failed (HTTP ${activitiesRes.status})`);
+					}
+					const { activities } = await activitiesRes.json();
+
+					const selected = select.value;
+					select.innerHTML = "";
+					for (const activity of activities) {
+						const option = document.createElement("option");
+						option.value = activity.id;
+						option.textContent = activity.name;
+						select.appendChild(option);
+					}
+					if (selected) {
+						select.value = selected;
+					}
+				} catch (error) {
+					select.innerHTML = `<option disabled selected>Could not load activities: ${error.message}</option>`;
+				}
+			}
+
+			apiKeyField.addEventListener("valuechange", loadActivities);
+			apiSecretField.addEventListener("valuechange", loadActivities);
+			loadActivities();
+		</script>
+	</body>
+</html>
