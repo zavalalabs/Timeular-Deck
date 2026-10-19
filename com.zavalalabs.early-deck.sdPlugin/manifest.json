@@ -7,7 +7,7 @@
 		{
 			"Name": "Start Activity",
 			"UUID": "com.zavalalabs.early-deck.start-activity",
-			"Icon": "imgs/actions/common/icon",
+			"Icon": "imgs/actions/start-activity/icon",
 			"Tooltip": "Starts tracking a specific EARLY (Timeular) activity.",
 			"PropertyInspectorPath": "ui/activity-picker.html",
 			"Controllers": [
@@ -15,7 +15,7 @@
 			],
 			"States": [
 				{
-					"Image": "imgs/actions/common/key",
+					"Image": "imgs/actions/start-activity/key",
 					"TitleAlignment": "middle"
 				}
 			]
@@ -23,14 +23,14 @@
 		{
 			"Name": "Stop Tracking",
 			"UUID": "com.zavalalabs.early-deck.stop-tracking",
-			"Icon": "imgs/actions/common/icon",
+			"Icon": "imgs/actions/stop-tracking/icon",
 			"Tooltip": "Stops whatever EARLY activity is currently being tracked.",
 			"Controllers": [
 				"Keypad"
 			],
 			"States": [
 				{
-					"Image": "imgs/actions/common/key",
+					"Image": "imgs/actions/stop-tracking/key",
 					"TitleAlignment": "middle"
 				}
 			]
@@ -38,7 +38,7 @@
 		{
 			"Name": "Toggle Activity",
 			"UUID": "com.zavalalabs.early-deck.toggle-activity",
-			"Icon": "imgs/actions/common/icon",
+			"Icon": "imgs/actions/toggle-activity/icon",
 			"Tooltip": "Starts or stops tracking a specific EARLY activity, and shows whether it's running.",
 			"PropertyInspectorPath": "ui/activity-picker.html",
 			"Controllers": [
@@ -46,7 +46,7 @@
 			],
 			"States": [
 				{
-					"Image": "imgs/actions/common/key",
+					"Image": "imgs/actions/toggle-activity/key",
 					"TitleAlignment": "middle"
 				}
 			]
@@ -54,14 +54,14 @@
 		{
 			"Name": "Current Activity",
 			"UUID": "com.zavalalabs.early-deck.current-activity",
-			"Icon": "imgs/actions/common/icon",
+			"Icon": "imgs/actions/current-activity/icon",
 			"Tooltip": "Displays whichever EARLY activity is currently being tracked.",
 			"Controllers": [
 				"Keypad"
 			],
 			"States": [
 				{
-					"Image": "imgs/actions/common/key",
+					"Image": "imgs/actions/current-activity/key",
 					"TitleAlignment": "middle"
 				}
 			]
