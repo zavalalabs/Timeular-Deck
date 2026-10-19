@@ -1,0 +1,77 @@
+name: Bug report
+description: Something in EARLY Deck isn't working as expected
+labels: ["bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: A clear description of the bug. Screenshots of the key/property inspector help a lot.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: host
+    attributes:
+      label: Which host are you running the plugin under?
+      options:
+        - Official Elgato Stream Deck software
+        - OpenDeck
+        - Not sure
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: e.g. Ubuntu 24.04, Windows 11, macOS 14
+    validations:
+      required: true
+
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin version
+      description: The "Version" field in manifest.json, or the version shown in the Stream Deck/OpenDeck plugin list.
+      placeholder: e.g. 0.1.0.0
+    validations:
+      required: false
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: |
+        Official Stream Deck software: logs live in `<plugin>.sdPlugin/logs/`.
+        OpenDeck (Linux): `~/.var/app/me.amankhanna.opendeck/config/opendeck/plugins/com.zavalalabs.early-deck.sdPlugin/logs/` (plugin log) and `~/.var/app/me.amankhanna.opendeck/data/opendeck/logs/opendeck.log` (app log).
+        Paste the relevant lines — please redact your API Key/Secret/token if they appear.
+      render: shell
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues and didn't find a duplicate
+          required: true

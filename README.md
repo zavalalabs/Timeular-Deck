@@ -48,6 +48,8 @@ For active development, `npm run watch` rebuilds on save and restarts the plugin
 
 ## 📞 Help
 
+Hit a bug, or something not behaving as expected? [Open an issue](https://github.com/zavalalabs/Timeular-Deck/issues/new/choose) — pick the **Bug report** template and fill in the host (official Stream Deck software vs. OpenDeck) and any relevant log output; that's almost always what's needed to track something down. Feature ideas are welcome too, via the **Feature request** template.
+
 ## 📄 License
 
 [MIT](LICENSE) — do what you like with it, including forking it for the official Stream Deck SDK or OpenDeck's OpenAction API.
